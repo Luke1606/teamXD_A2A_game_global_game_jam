@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
-import ScoreLabel from '../ui/ScoreLabel';
-import RobotSpawner from './RobotSpawner';
+import ScoreLabel from '../ui/ScoreLabel.js';
+import RobotSpawner from './RobotSpawner.js';
 
 const cespedKey = 'cesped';
 const elKey = 'el';
@@ -209,6 +209,7 @@ export default class GameScene extends Phaser.Scene
             setXY: { x: 100, y: 0, stepX: 300 }
         });
 
+        // @ts-ignore
         collectables.children.iterate((c) => {
             const child = (/**@type {Phaser.Physics.Arcade.Sprite} */(c));
             child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8))
@@ -234,7 +235,7 @@ export default class GameScene extends Phaser.Scene
             this.botSound.loop = false;
             this.ost.pause();
             this.winSound.play();
-    		player.anims.play('turn');
+            player.anims.play('turn');
             this.win = true;
         }
     }

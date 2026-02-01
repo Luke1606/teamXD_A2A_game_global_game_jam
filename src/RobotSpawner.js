@@ -20,7 +20,7 @@ export default class RobotSpawner
 
 	spawn(playerX = 0)
 	{
-		const x = (playerX < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(playerX - 250, playerX + 250);;
+		const x = (playerX < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(playerX - 250, playerX + 250);
 
         const robot = this.group.create(x, 16, this.key);
         robot.setBounce(1);
